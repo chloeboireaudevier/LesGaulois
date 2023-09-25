@@ -40,6 +40,16 @@ public class Druide {
 		return "Le druide " + nom + " : ";
 	}
 	
+	public void booster(Gaulois g) {
+		if (g.getNom()=="Obélix") {
+			paler("Non, Obélix !... Tu n'auras pas de potion magique !")
+		} else {
+
+		}
+		g.boirePotion(forcePotion);
+		
+	}
+	
 	public static void main(String[] args) {
 		Druide panoramix = new Druide("Panoramix",5,10);
 		panoramix.preparerPotion();
