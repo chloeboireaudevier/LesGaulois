@@ -5,6 +5,7 @@ public class Romain {
 	private int force;
 	
 	public Romain(String nom, int force) {
+		assert force >= 0;
 		this.nom = nom;
 		this.force = force;
 	}
@@ -22,19 +23,22 @@ public class Romain {
 	}
 	
 	public void recevoirCoup(int forceCoup) {
+		assert this.force >= 0;
+		int force_debut = this.force;
 		force -= forceCoup;
 		if (force > 0) {
 			parler("Aïe");
 		} else {
 			parler("J'abandonne...");
 		}
+		assert force_debut > this.force;
 	}
 	
 	public static void main(String[] args) {
-		Romain random = new Romain("Random", 5);
-		System.out.println(random.prendreParole());
-		random.parler("Bonjour");
-		random.recevoirCoup(3);
-		random.recevoirCoup(3);
+		Romain minus = new Romain("Minus", 6);
+		System.out.println(minus.prendreParole());
+		minus.parler("Bonjour");
+		minus.recevoirCoup(3);
+		minus.recevoirCoup(3);
 	}
 }
