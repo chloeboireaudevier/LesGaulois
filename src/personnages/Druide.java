@@ -42,7 +42,7 @@ public class Druide {
 	
 	public void booster(Gaulois g) {
 		if (g.getNom()=="Obélix") {
-			paler("Non, Obélix !... Tu n'auras pas de potion magique !")
+			parler("Non, Obélix !... Tu n'auras pas de potion magique !");
 		} else {
 
 		}
