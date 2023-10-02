@@ -44,7 +44,7 @@ public class Romain {
 		// précondition
 		assert force > 0;
 		int oldForce = force;
-		forceCoup = CalculResistanceEquipement(forceCoup);
+		forceCoup = calculResistanceEquipement(forceCoup);
 		force -= forceCoup;
 //		if (force > 0) {
 //				parler("Aïe");
@@ -79,7 +79,11 @@ public class Romain {
 				texte += resistanceEquipement + "!";
 			}
 			parler(texte);
-			forceCoup -= resistanceEquipement;
+			if ( forceCoup >= resistanceEquipement) {
+				forceCoup -= resistanceEquipement;
+			} else {
+				forceCoup = 0;
+			}
 			return forceCoup;
 		}
 	
@@ -94,6 +98,7 @@ public class Romain {
 				equipements[i] = null;
 			}
 		}
+		nbEquipement = 0;
 		return equipementEjecte;
 	}
 
@@ -133,5 +138,9 @@ public class Romain {
 		minus.sEquiper(Equipement.CASQUE);
 		minus.sEquiper(Equipement.BOUCLIER);
 		minus.sEquiper(Equipement.CASQUE);
+	}
+
+	public int getForce() {
+		return this.force;
 	}
 }

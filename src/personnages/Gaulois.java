@@ -46,11 +46,7 @@ public class Gaulois {
 		this.effetPotion = force;
 		parler("Merci Druide, je sens que ma force est "+force+" fois décuplée.");
 	}
-	
-//	@Override
-//	public String toString() {
-//		return "Gaulois [nom=" + nom + ", force=" + force + ", effetPotion=" + effetPotion + "]";
-//	}
+
 
 	public static void main(String[] args) {
 		Gaulois asterix = new Gaulois("Asterix",7);
